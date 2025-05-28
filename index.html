@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIEMPRETOP16</title>
+    <link rel="stylesheet" href="ESTILOS/styles.css">
+    <link rel="stylesheet" href="ESTILOS/inicio.css">
+    <link rel="stylesheet" href="ESTILOS/sobremi.css">
+    <link rel="stylesheet" href="ESTILOS/productosdestacados.css">
+    <link rel="stylesheet" href="ESTILOS/ofertas.css">
+    <link rel="stylesheet" href="ESTILOS/trabajosrealizados.css">
+    <link rel="stylesheet" href="ESTILOS/footer.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+    <header>
+
+        <!-- Acá estamos dentro del header-->
+         <img src="IMAGENES/logo_1.png" alt="Logo" width="500" height="400">
+        
+
+        <!-- Acá estamos dentro del nav-->
+        <nav class="nav-bar">
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#ofertas">Ofertas</a></li>
+            <li><a href="#trabajos">Trabajos Realizados</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+    
+    </header>
+
+    <!------------------------------------------------------- ACÁ ARRANCA EL LA SECCIÓN DE INICIO ---------------------------------------------------------------------------------------->
+
+    <section id="inicio" class="carousel-section">
+
+        <div class="carousel">
+          <div class="slide"><img src="IMAGENES/proyecto_1.png" alt="Trabajo 1"></div>
+          <div class="slide"><img src="IMAGENES/proyecto_2.png" alt="Trabajo 2"></div>
+          <div class="slide"><img src="IMAGENES/proyecto_3.png" alt="Trabajo 3"></div>
+          <div class="slide"><img src="IMAGENES/proyecto_4.png" alt="Trabajo 4"></div>
+          <div class="slide"><img src="IMAGENES/proyecto_5.png" alt="Trabajo 5"></div>
+        </div>
+
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+    
+    </section>
+
+    <section id="sobre-mi" class="presentacion">
+        <div class="contenedor-presentacion">
+          <div class="texto-presentacion">
+            <h2>Sobre Mí</h2>
+            <p>
+              Aficionada de la peluquería y las transformaciones en cuanto a los clientes, me gustan los cambios de imagen y cómo impacta en las personas que lo eligen.
+              Comencé este camino hace no mucho tiempo y me dedico a perfeccionarme siempre.
+              Me gustan los desafíos y trabajo duro para auto superarme siempre.
+            </p>
+          </div>
+          <div class="imagen-presentacion">
+            <img src="IMAGENES/sobre_mi_foto_perfil_final.png" alt="Foto de presentación">
+          </div>
+        </div>
+      </section>            
+      
+    <!------------------------------------------------------- ACÁ ARRANCA EL LA SECCIÓN DE PRODUCTOS ------------------------------------------------------------------------------------>
+      
+    <section id="productos" class="productos-destacados">
+
+      <h2>Productos</h2>
+
+      <div class="galeria-productos">
+        <img src="IMAGENES/producto_1.png" alt="Producto 1" class="producto-destacado">
+        <img src="IMAGENES/producto_2.png" alt="Producto 2" class="producto-destacado">
+        <img src="IMAGENES/producto_3.png" alt="Producto 3" class="producto-destacado">
+        <img src="IMAGENES/producto_4.png" alt="Producto 4" class="producto-destacado">
+      </div>      
+    
+      <!-- Modal para ampliar imagen -->
+      <div id="modal" class="modal-img">
+        <span class="modal-close">&times;</span>
+        <img class="modal-img-content" id="modal-img">
+      </div>      
+    </section>
+
+
+   <!------------------------------------------------------- ACÁ ARRANCA EL LA SECCIÓN DE OFERTAS --------------------------------------------------------------------------------------->
+
+   <section class="ofertas-section" id="ofertas">
+
+    <h2 class="ofertas-titulo">Ofertas</h2>
+
+    <div class="tarjeta-oferta-container">
+      <div class="tarjeta-oferta">
+        <img src="IMAGENES/oferta_1.png" alt="Oferta 1" />
+      </div>
+      <div class="tarjeta-oferta">
+        <img src="IMAGENES/oferta_2.png" alt="Oferta 2" />
+      </div>
+      <div class="tarjeta-oferta">
+        <img src="IMAGENES/oferta_3.png" alt="Oferta 3" />
+      </div>
+    </div>
+  </section>
+  
+  <!------------------------------------------------------- ACÁ ARRANCA EL LA SECCIÓN DE TRABAJOS REALIZADOS ---------------------------------------------------------------------------->
+   
+  <section class="trabajos-section" id="trabajos">
+
+    <h2 class="trabajos-titulo">Trabajos realizados</h2>
+
+    <div class="galeria-trabajos">
+      <img src="IMAGENES/trabajo_realizado_3.png" alt="Trabajo 3" />
+      <img src="IMAGENES/trabajo_realizado_4.png" alt="Trabajo 4" />
+      <img src="IMAGENES/trabajo_realizado_5.png" alt="Trabajo 5" />
+      <img src="IMAGENES/trabajo_realizado_6.png" alt="Trabajo 6" />
+    </div>
+  </section>  
+   
+  
+  <!------------------------------------------------------- ACÁ ESTAMOS DENTRO DEL FOOTER ----------------------------------------------------------------------------------------------->
+
+  <footer class="footer-section">
+    <div class="footer-container">
+  
+      <div class="footer-contacto-btn" id="contacto">
+        <h3>Contacto</h3>
+      </div>
+  
+      <form method="POST" action="https://formspree.io/f/mblovazz">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+  
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" required placeholder="Tu apellido">
+  
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required placeholder="tunombre@email.com">
+  
+        <label for="mensaje">Observaciones:</label>
+        <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Contanos en qué podemos ayudarte"></textarea>
+  
+        <button type="submit">Enviar</button>
+      </form>
+  
+      <div class="footer-columns">
+        <div class="footer-column redes-sociales">
+          <h3>Redes sociales</h3>
+          <div class="iconos-sociales">
+            <a href="https://www.facebook.com/share/1VRdQaCWgc/" target="_blank" aria-label="Facebook" rel="noopener">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/siempretop16?igsh=MWt2bDZyMTd1dmhpcQ==" target="_blank" aria-label="Instagram" rel="noopener">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/5491149717909" target="_blank" aria-label="WhatsApp" rel="noopener">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+  
+        <div class="footer-column ubicacion">
+          <h3>Ubicación</h3>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d488.5286828009579!2d-58.56633710588983!3d-34.5430174874585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb7d886c0d915%3A0x78aed688cb40329!2sIndah%20Estetica%20%26%20Bienestar!5e0!3m2!1ses!2sar!4v1748218961887!5m2!1ses!2sar" 
+            allowfullscreen 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade" 
+            title="Ubicación del local" 
+            class="mapa-google">
+          </iframe>
+          <p>San Martín 5936, Buenos Aires, Argentina</p>
+        </div>
+  
+        <div class="footer-column horarios">
+          <h3>Horarios de atención</h3>
+          <p>Lunes a Viernes: 9:00 - 19:00</p>
+          <p>Sábado: 08:30 - 05:00</p>
+          <p>Domingo: Cerrado</p>
+        </div>
+      </div>
+    </div>
+  </footer>  
+  
+    <!------------------------------------------------------- ACÁ VAN LOS SCRIPTS ------------------------------------------------------------------------------------------------------->
+<script src="JAVASCRIPT/carrusel_inicio.js"></script>
+<script src="JAVASCRIPT/productos_destacados.js"></script>        
+</body>
+</html>

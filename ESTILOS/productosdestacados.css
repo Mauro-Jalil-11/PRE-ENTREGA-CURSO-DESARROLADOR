@@ -1,0 +1,79 @@
+.productos-destacados {
+  background-color: #fffaf0;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.productos-destacados h2 {
+  font-size: 32px;
+  color: #000; /* negro */
+  margin-bottom: 30px;
+}
+
+.galeria-productos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.galeria-productos img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.galeria-productos img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.modal-img {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.modal-img-content {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .galeria-productos {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .galeria-productos img {
+    max-width: 90%;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
