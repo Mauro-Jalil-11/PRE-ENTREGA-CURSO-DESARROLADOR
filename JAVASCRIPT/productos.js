@@ -1,4 +1,3 @@
-// 📦 Array de productos
 const productos = [
   {
     id: 1,
@@ -26,7 +25,6 @@ const productos = [
   }
 ];
 
-// 🧩 Mostrar productos normales en .galeria-productos
 function mostrarProductos() {
   const contenedor = document.querySelector(".galeria-productos");
   contenedor.innerHTML = "";
@@ -46,7 +44,6 @@ function mostrarProductos() {
   });
 }
 
-// 💖 Mostrar favoritos guardados en .galeria-favoritos
 function mostrarFavoritos() {
   const favoritos = JSON.parse(localStorage.getItem("productosGuardados")) || [];
   const contenedor = document.querySelector(".galeria-favoritos");
@@ -65,30 +62,27 @@ function mostrarFavoritos() {
 
     contenedor.appendChild(card);
   });
+
+  
+  document.getElementById("contador-favoritos").textContent = `(${favoritos.length})`;
 }
 
-// 📥 Guardar producto en localStorage (evita duplicados)
 document.addEventListener("click", function(e) {
   if (e.target.classList.contains("btn-guardar")) {
     const idProducto = parseInt(e.target.dataset.id);
     const productoSeleccionado = productos.find(p => p.id === idProducto);
 
     let guardados = JSON.parse(localStorage.getItem("productosGuardados")) || [];
-
     const yaGuardado = guardados.some(p => p.id === productoSeleccionado.id);
 
     if (!yaGuardado) {
       guardados.push(productoSeleccionado);
       localStorage.setItem("productosGuardados", JSON.stringify(guardados));
-      mostrarFavoritos(); // actualiza galería de favoritos
-      alert(`Guardaste: ${productoSeleccionado.nombre}`);
-    } else {
-      alert("Este producto ya está guardado.");
+      mostrarFavoritos();
     }
   }
 });
 
-// ❌ Eliminar producto de favoritos
 document.addEventListener("click", function(e) {
   if (e.target.classList.contains("btn-quitar")) {
     const idProducto = parseInt(e.target.dataset.id);
@@ -96,12 +90,15 @@ document.addEventListener("click", function(e) {
 
     guardados = guardados.filter(p => p.id !== idProducto);
     localStorage.setItem("productosGuardados", JSON.stringify(guardados));
-    mostrarFavoritos(); // actualiza galería
-    alert("Producto eliminado de favoritos.");
+    mostrarFavoritos();
   }
 });
 
-// 🚀 Ejecutar al cargar la página
+document.getElementById("vaciar-favoritos").addEventListener("click", () => {
+  localStorage.removeItem("productosGuardados");
+  mostrarFavoritos();
+});
+
 mostrarProductos();
 mostrarFavoritos();
 

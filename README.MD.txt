@@ -1,3 +1,3 @@
-Este proyecto es una página web básica desarrollada como parte de un curso de Front-End.
-La página está estructurada con HTML semántico y utiliza distintas etiquetas para organizar el contenido. 
-El objetivo es aprender a crear la estructura básica de una página web para el emprendimiento de peluqueria y estilista de mi novia.
+Este proyecto es una página web desarrollada como parte del curso de Front-End, con el objetivo de aprender y aplicar los fundamentos del desarrollo web moderno. 
+La estructura está armada con HTML semántico, estilos en CSS y funcionalidades en JavaScript, buscando no solo cumplir con los contenidos técnicos del curso, sino también servir como plataforma inicial para el emprendimiento de peluquería y estilismo de mi pareja. 
+El diseño, los colores y las secciones fueron pensados para transmitir cercanía, profesionalismo y una estética acorde al rubro. Es una entrega que representa tanto un proyecto de aprendizaje como una idea personal con mucho cariño.
