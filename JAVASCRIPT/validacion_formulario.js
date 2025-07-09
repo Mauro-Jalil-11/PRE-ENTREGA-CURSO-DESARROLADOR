@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
       alert("⚠️ Errores detectados:\n\n" + errores.join("\n"));
     } else {
       alert("✅ Formulario enviado correctamente.");
-      form.submit(); // podés dejarlo si querés usar Formspree igual
+      form.submit();
     }
   });
 });
