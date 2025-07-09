@@ -1,3 +1,4 @@
+/* 🧱 Sección general */
 .productos-destacados {
   background-color: #fffaf0;
   padding: 40px 20px;
@@ -7,31 +8,60 @@
 
 .productos-destacados h2 {
   font-size: 32px;
-  color: #000; /* negro */
+  color: #000;
   margin-bottom: 30px;
 }
 
+/* 🔲 Contenedor de productos */
 .galeria-productos {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
   justify-content: center;
+  gap: 20px;
+  padding: 20px;
 }
 
-.galeria-productos img {
+/* 🧩 Tarjetas dinámicas */
+.producto-card {
+  width: 300px; /* Aumentado desde 250px */
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.producto-card:hover {
+  transform: translateY(-5px);
+}
+
+/* 🖼️ Imágenes de productos */
+.producto-card img {
   width: 100%;
-  max-width: 300px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
 }
 
-.galeria-productos img:hover {
+.producto-card img:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
+/* 🧾 Texto */
+.producto-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  margin: 10px 0 5px;
+}
+
+.producto-card p {
+  font-size: 15px;
+  color: #555;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* 🧿 Modal de ampliación (si lo usás) */
 .modal-img {
   display: none;
   position: fixed;
@@ -63,17 +93,31 @@
   cursor: pointer;
 }
 
+/* 📱 Responsividad */
 @media (max-width: 768px) {
   .galeria-productos {
     flex-direction: column;
     align-items: center;
   }
 
-  .galeria-productos img {
-    max-width: 90%;
+  .producto-card {
+    width: 90%;
+  }
+
+  .producto-card h3 {
+    font-size: 20px;
+  }
+
+  .producto-card p {
+    font-size: 14px;
   }
 }
 
+/* 🌍 Scroll suave */
 html {
   scroll-behavior: smooth;
 }
+
+
+
+
