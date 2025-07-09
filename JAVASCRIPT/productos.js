@@ -1,3 +1,4 @@
+// 📦 Array de productos
 const productos = [
   {
     id: 1,
@@ -25,18 +26,88 @@ const productos = [
   }
 ];
 
-const galeria = document.querySelector(".galeria-productos");
+// 🧩 Mostrar productos normales en .galeria-productos
+function mostrarProductos() {
+  const contenedor = document.querySelector(".galeria-productos");
+  contenedor.innerHTML = "";
 
-productos.forEach(producto => {
-  const card = document.createElement("div");
-  card.classList.add("producto-card");
+  productos.forEach(producto => {
+    const card = document.createElement("div");
+    card.classList.add("producto-card");
 
-  card.innerHTML = `
-    <img src="${producto.imagen}" alt="${producto.nombre}">
-    <h3>${producto.nombre}</h3>
-    <p>${producto.descripcion}</p>
-  `;
+    card.innerHTML = `
+      <img src="${producto.imagen}" alt="${producto.nombre}">
+      <h3>${producto.nombre}</h3>
+      <p>${producto.descripcion}</p>
+      <button class="btn-guardar" data-id="${producto.id}">Guardar producto</button>
+    `;
 
-  galeria.appendChild(card);
+    contenedor.appendChild(card);
+  });
+}
+
+// 💖 Mostrar favoritos guardados en .galeria-favoritos
+function mostrarFavoritos() {
+  const favoritos = JSON.parse(localStorage.getItem("productosGuardados")) || [];
+  const contenedor = document.querySelector(".galeria-favoritos");
+  contenedor.innerHTML = "";
+
+  favoritos.forEach(producto => {
+    const card = document.createElement("div");
+    card.classList.add("producto-card");
+
+    card.innerHTML = `
+      <img src="${producto.imagen}" alt="${producto.nombre}">
+      <h3>${producto.nombre}</h3>
+      <p>${producto.descripcion}</p>
+      <button class="btn-quitar" data-id="${producto.id}">Quitar de favoritos</button>
+    `;
+
+    contenedor.appendChild(card);
+  });
+}
+
+// 📥 Guardar producto en localStorage (evita duplicados)
+document.addEventListener("click", function(e) {
+  if (e.target.classList.contains("btn-guardar")) {
+    const idProducto = parseInt(e.target.dataset.id);
+    const productoSeleccionado = productos.find(p => p.id === idProducto);
+
+    let guardados = JSON.parse(localStorage.getItem("productosGuardados")) || [];
+
+    const yaGuardado = guardados.some(p => p.id === productoSeleccionado.id);
+
+    if (!yaGuardado) {
+      guardados.push(productoSeleccionado);
+      localStorage.setItem("productosGuardados", JSON.stringify(guardados));
+      mostrarFavoritos(); // actualiza galería de favoritos
+      alert(`Guardaste: ${productoSeleccionado.nombre}`);
+    } else {
+      alert("Este producto ya está guardado.");
+    }
+  }
 });
+
+// ❌ Eliminar producto de favoritos
+document.addEventListener("click", function(e) {
+  if (e.target.classList.contains("btn-quitar")) {
+    const idProducto = parseInt(e.target.dataset.id);
+    let guardados = JSON.parse(localStorage.getItem("productosGuardados")) || [];
+
+    guardados = guardados.filter(p => p.id !== idProducto);
+    localStorage.setItem("productosGuardados", JSON.stringify(guardados));
+    mostrarFavoritos(); // actualiza galería
+    alert("Producto eliminado de favoritos.");
+  }
+});
+
+// 🚀 Ejecutar al cargar la página
+mostrarProductos();
+mostrarFavoritos();
+
+
+
+
+
+
 

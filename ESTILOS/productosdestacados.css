@@ -118,6 +118,79 @@ html {
   scroll-behavior: smooth;
 }
 
+.btn-guardar {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #000;         /* fondo negro */
+  color: #fff;                    /* texto blanco */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.btn-guardar:hover {
+  background-color: #333;         /* gris oscuro para hover */
+}
+
+.galeria-favoritos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+#favoritos h2 {
+  background-color: #000;       /* fondo negro */
+  color: #fff;                  /* texto blanco */
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 26px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  width: fit-content;
+  margin: 0 auto 30px auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.galeria-favoritos .producto-card {
+  width: 220px;
+  padding: 15px;
+  min-height: 360px; /* ✔️ fija altura mínima */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* ✔️ separa imagen/texto/botón */
+}
+
+.galeria-favoritos .producto-card img {
+  height: 160px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.btn-quitar {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #e74c3c;   /* rojo vibrante */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.btn-quitar:hover {
+  background-color: #c0392b;   /* rojo más oscuro al pasar el mouse */
+}
+
+
+
+
+
+
 
 
 
